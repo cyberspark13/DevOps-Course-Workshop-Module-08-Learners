@@ -27,6 +27,7 @@ jobs:
       working-directory: ./DotnetTemplate.Web
 
   publish:
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: build
     name: Publish to Docker Hub
     runs-on: ubuntu-latest
